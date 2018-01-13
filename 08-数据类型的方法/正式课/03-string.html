@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        /*
+        * - 索引、下标、偏移值——从0开始
+        - str[index]——通过索引取字符串
+        - str.length——获取长度 空格也算
+        - toString——转换字符串
+        - str.substring(2,6)——截取字符串 会比较参数值 小的参数在前面  负数变为0
+        - str.slice()——切片 不会交换位置 负数倒着数 从右到左
+        - str.split()——字符串切割 返回数组
+        - str.indexOf()——查找字符串 成功返回索引 反之返回-1
+          alert(str.indexOf("xiaopo",str.indexOf("xiaopo")+1));
+        - str.toUpperCase()——全部转换到大写
+        - str.toLowerCase()——全部转换到小写
+        * */
+
+        var str = 'My name is zhongxin';
+        console.log(str);//可读
+        console.log(str.length);
+
+        console.log(str[0]);//通过下标访问元素
+
+        str[1] = 'Y';
+        console.log(str);//只能读，不能写
+
+        var a = 456;
+        console.log(typeof a);//number
+        console.log(typeof a.toString());//string
+
+        console.log(str.substring(3,7));//name
+        console.log(str.substring(3));//name is zhongxin 会删除之前的内容
+        console.log(str.substring(-5,4));//My n 负数变为0
+
+        console.log(str.slice(1,9));//y name i
+        console.log(str.slice(-6,-3));//ong
+
+        console.log(str.split(" "));//["My", "name", "is", "zhongxin"]
+
+        console.log(str.indexOf('Q'));//不存在返回-1
+        console.log(str.indexOf('z'));//存在返回索引值
+        console.log(str.indexOf('i'));//8
+        console.log(str.indexOf('i',9));//从第9位开始检索
+
+        console.log(str.toUpperCase());//全部大写MY NAME IS ZHONGXIN
+        console.log(str.toLowerCase());//my name is zhongxin
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+    111
+    </div>
+   <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+    /*
+    * 添加兄弟元素
+     after
+     before
+
+     insertAfter
+     insertBefore
+    *
+    * */
+    $('#box').before('<b>我是新增的</b>');
+    $('#box').after('<b>我是新增的+1</b>');
+
+    $('<b> 我是新增的+2</b>').insertAfter($('#box'));
+    $('<b> 我是新增的+3</b>').insertBefore($('#box'));
+    </script>
+</body>
+</html>

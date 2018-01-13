@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>margin</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    /*
+    margin 外边距 元素与其他元素的距离（边框以外的距离）
+    margin：auto左右居中
+    垂直方向：margin-bottom,margin-top 取两者之间的较大值
+    水平方向：margin-left,margin-right 取两者之和
+    overflow: hidden;解决内边距重叠的问题
+    */
+    div.box1{
+        width: 100px;
+        height: 100px;
+        background: red;
+        margin: 50px;
+        display: inline-block;
+    }
+    div.box2{
+        width: 100px;
+        height: 100px;
+        background: yellow;
+        margin: 50px;
+        display: inline-block;
+    }
+    div.box3{
+        width: 200px;
+        height: 200px;
+        background: red;
+        overflow: hidden;
+        }
+    div.box4{
+        width: 100px;
+        height: 100px;
+        background: yellowgreen;
+        margin-top: 50px;
+        margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3">
+        <div class="box4">
+
+        </div>
+    </div>
+</body>
+</html>

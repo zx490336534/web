@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        setTimeout(function () {//延时定时器
+            console.log(1);
+        },1000);//1000毫秒=1秒
+
+        setInterval(function () {//隔1000毫秒一直不停执行
+            console.log(2);
+        },1000);
+
+        setInterval(fn,1000);
+        function fn() {
+            console.log(5)
+        }
+    </script>
+</body>
+</html>

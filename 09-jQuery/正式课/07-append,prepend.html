@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        我是div
+        <p>我是已经存在的p</p>
+    </div>
+    <b>我是Bb标签</b>
+   <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+        /*
+        * 添加子元素 可以是标签、文本、js对象、jq对象
+         append
+         prepend
+
+         appendTo
+         prependTo
+        *
+        * */
+        $('#box').append('<em>我是em标签</em>');//添加在div后面
+
+        $('#box').prepend('<em>我是em标签</em>');//添加在div前面
+
+        $('#box').append('我是文本');
+        $('#box').prepend('我是文本');
+
+        var b = document.querySelector('b');
+        $('#box').append(b);//之前的b标签消失，移动到div的内部
+
+        $('#box').append($(b));
+
+        $('<em>我是em标签</em>').appendTo($('#box'));
+
+    </script>
+</body>
+</html>

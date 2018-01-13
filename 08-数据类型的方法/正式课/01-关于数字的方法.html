@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        /*
+        * js的六大数据类型
+        *
+        *
+        * number数字
+        *   在js了么的小数和整数统一都是数字，-2^53-2^53，超出范围之后精度就会不准确
+        * number方法
+        *   Number() ---参数中必须能被转化成数字，否则返回NaN；
+        *   parseInt（解析的函数）---将参数转换为数字，整数部分遇到不少数字就停
+        *   parseFloat（）--将参数转换为数字，不是数字就停，否则直到小数部分遇到不是数字就停
+        *   Num.toFixed（n）--四舍五入保留n位小数
+        *   NaN（Not a Number）
+        *   NaN不等于自己
+        *
+        * */
+        var x = '钟鑫';
+        alert(Number(x));//NaN
+
+        var x = '888'
+        alert(Number(x));//888
+        alert(typeof Number(x));//number
+
+        var x = '56a.88a9';
+        alert(parseInt(x));//56
+        alert(parseFloat(x));//56
+
+        var x = 55.48;
+        alert(x.toFixed(1));//55.5
+
+        alert(NaN == NaN)//false
+    </script>
+</body>
+</html>

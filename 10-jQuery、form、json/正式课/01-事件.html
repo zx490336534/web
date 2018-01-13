@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        li{
+            list-style: none;
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+            <li>04</li>
+        </ul>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+        /*
+        jquery里面的事件
+                都是函数形式的，去掉on的那种
+                原理上事件都是事件绑定的形式而不是赋值的形式
+        jquery事件绑定、解绑
+                所有事件的添加都是绑定的形式
+                可以通过on来添加事件
+        */
+        var oBox = document.getElementById('box');
+        oBox.onclick = function () {
+            console.log('1');
+        };
+        oBox.onclick = function () {
+            console.log('2');
+        };//只会弹2
+
+
+        $('#box').click(function () {
+            console.log('3');
+        });
+
+        //on绑定单个事件
+        $('#box').on('click','li',function () {
+            alert($(this).index());
+        });
+
+        //on绑定多个事件
+        $('#box').on({
+            'click':function () {
+                console.log('我被点击了');
+            },
+            'mouseenter':function () {
+                console.log('我被鼠标移入了');
+            },
+            'mouseleave':function () {
+                console.log('我被鼠标移出了');
+            }
+        });
+
+        $('#box').off('click');//移除一个事件
+        $('#box').off();//移除全部事件
+        $('#box').hover(function () {
+            console.log('hello');
+        },function () {
+            console.log('lalalala');
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 500px;
+            height: 400px;
+            border: 1px solid red;
+            margin: 50px auto;
+            border-radius: 5px;
+        }
+        #box1{
+            padding-top: 20px;
+            padding-left: 40px;
+        }
+        #text1{
+            border-radius: 5px;
+        }
+        #text2{
+            border-radius: 5px;
+        }
+        #btn1{
+            border-radius: 2px;
+            color: red;
+            line-height: 15px;
+        }
+        #btn2{
+            border-radius: 2px;
+            color: #3377aa;
+            line-height: 15px;
+        }
+        #box2{
+            padding-top: 20px;
+            padding-left: 40px;
+            padding-right: 40px;
+            text-indent: 2em;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="box1">
+            <input type="text" id="text1">
+            <input type="text" id="text2">
+            <input type="button" value="查找" id="btn1">
+            <input type="button" value="替换" id="btn2">
+        </div>
+        <div id="box2">
+            [西塘]古代吴越文化发祥地之一，以桥多，弄多，廊棚多而闻名，众多的桥梁又把水乡连成一体。古称“九龙捧珠”、“八面来风”。“春秋的水，唐宋的镇，明清的建筑，现代的人”，是对西塘最恰当不过的形容。阿汤哥主演的《谍中谍3》更是将西塘特有的水乡风情带给了全世界。
+古镇区内有保存完好的明清建筑群多处，具有较高的艺术性和研究价值，为国内外研究古建筑的专家学者所瞩目。西塘也是美食的天堂，小到街头小吃，大到饭店佳肴，林林总总，令人垂涎。夜色来临坐着游船游西塘，整座古镇似诗如画，人处其间，恍然桃花琼瑶，不知是人在画中游，还是画在心中游。
+        </div>
+    </div>
+    <script>
+    var text1 = document.getElementById('text1');
+    var text2 = document.getElementById('text2');
+    var btn1 = document.getElementById('btn1');
+    var btn2 = document.getElementById('btn2');
+    var box2 = document.getElementById('box2');
+    var str = box2.innerHTML;
+    btn1.onclick = function () {
+        var s = text1.value;
+//        console.log(s);
+        arr = str.split(s);
+        box2.innerHTML = '';
+        for (var i = 0;i < arr.length-1;i++){
+//            console.log(arr[i]);
+            box2.innerHTML += arr[i] + "<sapn style=\"color: red\">" + s + "</sapn>";
+        }
+        box2.innerHTML += arr[i]
+
+    };
+    btn2.onclick = function () {
+        var s1 = text1.value;
+        var s2 = text2.value;
+        arr = str.split(s1);
+        box2.innerHTML = '';
+        for (var i = 0;i < arr.length-1;i++){
+//            console.log(arr[i]);
+            box2.innerHTML += arr[i] + "<sapn style=\"color: red\">" + s2 + "</sapn>";
+        }
+        box2.innerHTML += arr[i]
+    };
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本属性</title>
+    <style>
+        /*
+        text-decoration下划线、删除线、上划线
+        - none 默认值 可以用这个属性去掉已有下划线或者删除线或者上划线的样式
+        - underline 下划线 一般用于文章的重点表明
+        - overline 上划线
+        - line-through 删除线
+        */
+        /*
+        text-transform文本大小写
+        - none 默认值 无转化发生
+        - uppercase 转换成大写
+        - lowercase 转换成小写
+        - capitalize 将英文单词的首字母大写
+        */
+
+        /*
+        text-align文本水平对齐方式
+        - left 默认值 左对齐
+        - right 右对齐
+        - center 居中对齐
+        只针对文本和img标签 对其他标签无效
+        */
+
+        /*
+        text-indent首行缩进 (2em)
+        - line-height行高
+        - letter-spacing字距
+        - word-spacing词距
+
+        */
+
+        /*
+        white-space: 换行方式
+            normal 正常换行
+            nowrap 不换行
+        */
+        p{
+            border: 1px solid;
+            width: 400px;
+            height: 200px;
+            /*text-decoration: underline;*/
+            /*text-decoration: overline;*/
+            text-transform: uppercase;
+            text-transform: lowercase;
+            text-transform: capitalize;
+            text-align: right;
+            text-align: center;
+            text-indent: 2em; /*首行缩进2个空格*/
+            /*line-height: 30px;*/
+            /*letter-spacing: 10px;*/
+            word-spacing: 5px;
+            white-space: nowrap; /*不换行*/
+        }
+        span{
+            text-decoration: line-through;
+        }
+        a{
+            text-decoration: none;
+        }
+        .box1{
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        hello python百度百科是百度公司推出的一部内容开放、自由的网络百科全书平台。其测试版于2006年4月20日上线，正式版在2008年4月21日发布，截至2017年9月，百度百科已经收录了超过1500万的词条，参与词条编辑的网友超过630万人，几乎涵盖了所有已知的知识领域。
+    </p>
+    <p class="box1">
+        <span>不要998</span>只要98
+    </p>
+    <a href="#" >lalalal</a>
+</body>
+</html>

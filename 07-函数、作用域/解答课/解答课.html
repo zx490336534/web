@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+    var x = 5;
+    a ();
+    function a (){
+        alert(x);
+        var x = 10;
+    }
+    alert(x);
+    /*
+    * 1.找
+    *   x = und; ==> x = 5;
+    *   a =     function a (){
+                    alert(x);
+                    var x = 10;
+                }
+    * 2.执行
+    *   x = 5;
+    *   a();
+    *       1.找
+    *           x = und; ==> x = 10
+    *       2.执行
+    *           alert(x); ==> und;
+    *           x = 10;
+    *   alert(x); ==> 5
+    *
+    *   答案：先弹出undefined然后5
+    * */
+
+
+
+    b();
+       function b(){
+           alert(x1);
+           var x1 = 10;
+       }
+//       alert(x1);
+    /*
+    * 1.找
+    *   a = function a(){
+           alert(x1);
+           var x1 = 10;
+       }
+       2.执行
+            a();
+                1.找
+                    x1 = und; ==> x1 = 10
+                2.执行
+                    alert(x1); ==> und
+                    x1 = 10;
+    *   alert(x1); ==> 报错
+    *
+    * 答案：先弹出undefined然后报错
+    * */
+
+
+
+    function c (){
+       alert(1);
+     }
+     var c;
+     alert(c);
+     /*
+     * 1.找
+     *      c =     function a (){
+                       alert(1);
+                    }
+            c = und;被干掉
+
+     * 2.执行
+     *      alert(c) ==> 函数块
+     * 答案：弹出函数块
+     * */
+
+
+     alert (d);
+     var d = 10;
+     alert (d);
+     function d(){
+       alert(20);
+     }
+     alert (d);
+     var d = 30;
+     alert (d);
+     function d(){
+         alert(40);
+     }
+     alert (d);
+    /*
+    * 1.找
+    *   d =function d(){
+            alert(40);
+         } ==> d = 10; ==> d = 30;
+      2.执行
+        alert(d); ==> d =function d(){
+                        alert(40);
+                        }
+        d = 10;
+        alert(d); ==> 10
+        alert(d); ==> 10
+        d = 30;
+        alert(d); ==> 30
+        alert(d); ==> 30
+        答案：函数块,10,10,30,30
+    * */
+
+
+    var e = 10;
+     alert(e);
+//     e ();//报错
+     function e(){
+         alert(20);
+     }
+    /*
+    * 1.找
+    *   a = und;
+    *   a = function(){
+    *       alert(20);
+    *   } ==> a= 10;
+    * 2.执行
+    *   a = 10;
+    *   alert(a); ==> 10
+    *   a();10()//报错
+    *
+    * 答案：10,报错
+    * */
+
+
+    var f = 0;
+    function fn(){
+        alert(f);
+        var f = 1;
+        alert(f);
+      };
+    fn();
+    alert(f);
+    /*
+    * 1.找
+    *   a = und; ==> a = 0;
+    *   fn =  function fn(){
+                alert(f);
+                var f = 1;
+                alert(f);
+              };
+       2.执行
+        a = 0;
+        fn();
+            1.找
+                a = und; ==> a = 1
+            2.执行
+                alert(a); ==> und
+                a = 1;
+                alert(a); ==> 1
+        alert(a); ==> 0
+
+    *答案：und,1,0
+    * */
+    </script>
+</body>
+</html>

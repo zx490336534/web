@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪类选择器</title>
+    <style>
+        /*LoVe HAte*/
+        a:link{/*link 未被点击的链接*/
+            color: red;
+        }
+
+        a:visited{/*已经被点击的链接*/
+            color: green;
+        }
+
+        a:hover{/*鼠标悬停其上的元素*/
+            color: aqua;
+        }
+
+        a:active{/*鼠标已经在其上按下但是还没有释放的元素*/
+            color: blue;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+
+        p{
+            width: 50px;
+            height: 50px;
+            background: yellow;
+        }
+
+        div:hover{
+            width: 200px;
+            height: 100px;
+            background: blue;
+        }
+
+        div:hover p{
+            width: 200px;
+            height: 100px;
+            background: aqua;
+        }
+    </style>
+</head>
+<body>
+    <a href="javascript:void(0);">aaa</a>
+    <!--已经被点击的链接跳转会变色-->
+    <a href="https://www.baidu.com;">baidu</a>
+
+    <div>
+        1
+        <p>2</p>
+    </div>
+</body>
+</html>

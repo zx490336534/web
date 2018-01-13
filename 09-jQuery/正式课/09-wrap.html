@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        em{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p>001</p>
+        <p>002</p>
+        <p>003</p>
+    </div>
+   <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+        /*
+        * wrap 给每个元素添加一个父元素
+        * unwrap 删除元素的父元素
+        * wrapAll 给子元素添加一个父元素都包起来
+        * wrapInner
+        * */
+        $('p').wrap('<div></div>');//加父元素
+        $('p').unwrap();//删除父元素
+        $('p').unwrap();//删除父元素+1
+        $('p').wrapAll('<div></div>');//将p打包进一个div
+        $('p').wrapInner('<em></em>');//给p标签中的内容加em
+
+
+    </script>
+</body>
+</html>

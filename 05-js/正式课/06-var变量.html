@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 100px;
+            height: 100px;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        /*
+         不能使用关键字或者保留字（js里面已经赋予它有意义的词，或者留着备用的词）
+         只能包含 数字 字母 _ $ 并且不能以数字开头
+         严格区分大小写
+         尽量见名知意
+         var 变量时并不要求立马赋值
+         用,号可以让一个var定义多个变量
+        */
+//        var a = 10;
+//        var b = 20;
+//          var a = 10, b = 30;
+          var a, b, c;
+          a = 10;
+          b = 10;
+          c = 10;
+        console.log(a + b)
+
+        var oBox = document.getElementById('box');
+        oBox.onclick = function () {
+            console.log('我被点击了');
+        };
+        oBox.onmouseenter = function () {
+            console.log('我被鼠标移入了')
+        };
+        oBox.onmouseleave = function () {
+            console.log('我被鼠标移出了')
+        }
+    </script>
+</body>
+</html>

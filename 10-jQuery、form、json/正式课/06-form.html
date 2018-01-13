@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        textarea{
+            width: 200px;
+            height: 200px;
+            resize: none;/*不能拉升*/
+            /*resize:horizontal;!*只能水平拉*!*/
+
+        }
+    </style>
+</head>
+<body>
+    <form action="https://www.baidu.com" method="post"><!--默认get-->
+        <!--action 		规定当前提交表单时向何处发送表单数据-->
+        账号: <input type="text" name="user" placeholder="请输入你的账号" required autocomplete="off"><br>
+        <!--autocomplete='off'取消缓存-->
+        密码: <input type="password" name="psd" required><br>
+        性别:
+        <input type="radio" name="gender" value="1">男
+        <input type="radio" name="gender" value="2">女
+        <input type="radio" name="gender" value="3">保密
+        <br>
+        兴趣（多选）：
+        <input type="checkbox" value="sing" id="sing1">
+        <label for="sing1">唱歌</label>
+        <input type="checkbox" value="read" id="read1" disabled><!--禁止选中-->
+        <label for="read1">看书</label>
+        <input type="checkbox" value="dance" id="dance1" checked><!--默认选上-->
+        <label for="dance1">跳舞</label>
+        <input type="checkbox" value="sport" id="sport1">
+        <label for="sport1">运动</label>
+        <br>
+        下拉框：
+        <select name="bb" id="dd"><!--size="2" 默认展示2个-->
+            <option value="0">请选择</option>
+            <option value="1" selected>浙江</option><!--默认-->
+            <option value="2">北京</option>
+            <option value="3">上海</option>
+        </select>
+        <br>
+        <textarea name="qq" id="ww" cols="30" rows="10"></textarea>
+        <br>
+        提交：
+        <input type="submit" value="提交"><br>
+        按钮：
+        <input type="button" value="按钮"><br>
+        重置：
+        <input type="reset" value="重置"><br>
+    </form>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li>0001</li>
+        <li>0002</li>
+        <li>0003</li>
+        <li>0004</li>
+    </ul>
+    <script>
+        for (var i = 0; i < 10; i ++){
+            for (var j = 0; j < 2; j++){
+                console.log(i + ';' + j);
+            }
+        }
+        var list = document.getElementById('list');
+        var li = document.getElementsByTagName('li');
+        var len = li.length;
+        alert(len);
+        for(var n = 0; n<len; n++){
+            li[n].index = n;
+//            li[0].index = 0;
+//            li[1].index = 1;
+//            li[2].index = 2;
+//            li[3].index = 3;
+            li[n].onclick = function () {
+                alert(this.innerHTML);
+                alert(n);//循环结束之后的i为4
+                alert(this.index)
+            }
+        }
+    </script>
+</body>
+</html>

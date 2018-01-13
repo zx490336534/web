@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 500px;
+            height: 200px;
+            border: 1px solid red;
+            text-align: center;
+            line-height: 200px;
+            margin: 50px auto;
+        }
+        span{
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p>
+            404,此页面找不到，页面将在
+                <span id="time">
+                    4s
+                </span>
+            后跳转到百度首页
+        </p>
+    </div>
+    <script>
+        var timer = document.getElementById('time');
+        var num = 5;
+        var time;
+        time = setInterval(function () {
+            num --;
+            timer.innerHTML = num + 's';
+            if (num === 0){
+                clearInterval(time);
+                window.location.href = 'https://www.baidu.com';
+            }
+        },1000);
+    </script>
+</body>
+</html>

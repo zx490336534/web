@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        /*- 主要存放数据
+        - .push往数组后面 追加
+        - .unshift往数组前面 追加
+        - .pop删除数组最后 一位
+        - shift删除数组的 第0位
+        */
+
+        var arr = [4,5,"zhongxin"];
+        console.log(arr.length);//3
+        console.log(arr[0]);//4
+        arr[0] = 10;
+        console.log(arr);//[10, 5, "zhongxin"]
+        console.log(arr.join('~'));//10~5~zhongxin
+        console.log(typeof arr.join('-'));//string
+
+        //以创建对象的形式创建组数
+        var arr = new Array();
+        arr[0] = 'hello0';
+        arr[1] = 'hello1';
+        arr[2] = 'hello2';
+        console.log(arr);//["hello0", "hello1", "hello2"]
+
+        var arr = [4,5,[5,6,7]];
+        console.log(arr);//[4, 5, Array(3)]    [5, 6, 7]
+        console.log(arr.length);
+        console.log(arr[2][1]);//6
+
+        var arr = ['a', 'b', 'c', 'd'];
+        arr.push('e');
+        console.log(arr);//["a", "b", "c", "d", "e"]
+        arr.push('f','g','h');
+        console.log(arr);//["a", "b", "c", "d", "e", "f", "g", "h"]
+
+        arr.unshift('a0','a1');
+        console.log(arr);//前部加：["a0", "a1", "a", "b", "c", "d", "e", "f", "g", "h"]
+
+        arr.pop();
+        console.log(arr);//删除最后一个
+
+        arr.shift();
+        console.log(arr);//删除第一个
+
+        var arr = ['a', 'b', 'c', 'd'];
+        arr.splice(2);
+        console.log(arr);//数组的长度为2，只留下2个
+
+        var arr = ['a', 'b', 'c', 'd'];
+        arr.splice(0,3);
+        console.log(arr);//从第0位开始删除3个
+
+        var arr = ['a', 'b', 'c', 'd'];
+        arr.splice(1,2,'hello');
+        console.log(arr);//从1位开始删除1个再插入‘hello’
+
+        var arr = [1,6,2,4,9,3,12];
+        console.log(arr.sort());//从小到大 [1, 12, 2, 3, 4, 6, 9]
+        console.log(arr.sort().reverse());//从大到小[9, 6, 4, 3, 2, 12, 1]
+
+        arr.sort(function (a,b) {
+            return a-b;//从小到大[1, 2, 3, 4, 6, 9, 12]
+//            return b-a;//从大到小[12, 9, 6, 4, 3, 2, 1]
+        });
+        console.log(arr)
+
+    </script>
+</body>
+</html>

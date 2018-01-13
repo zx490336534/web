@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+    /*
+    * javascript解析顺序
+    *   1.（定义）先解析var function参数
+    *       a.该步骤的var之定义变量，后面的=赋值不解析
+    *       b.该步骤的函数只定义函数，函数的执行不解析
+    *       c.重名的只留一个，var和函数重名 函数优先
+    *   2.（执行）从上至下执行其他代码
+    *
+    *
+    *   作用域：
+    *   作用：读写
+    *   解析：
+    *   从上至下
+    *       1.找var定义函数 参数
+    *       2，执行
+    * */
+
+    console.log(a);//undefined
+    var a = 5;
+    console.log(a);//5
+
+
+        console.log(b);
+        function b() {
+            console.log(6);//ƒ b() {console.log(6);}
+        }
+        console.log(b);//ƒ b() {console.log(6);}
+
+        console.log(c);//ƒ c() {console.log(66);}
+        function c() {
+            console.log(66)
+        }
+        c();//66
+        console.log(c);//ƒ c() {console.log(66);}
+
+        console.log(d);
+        function d() {
+            console.log(666);//ƒ d() {console.log(666);}
+        }
+        var d = 520;
+        console.log(d);//520
+
+        var e = 1;
+        function fn1() {
+            console.log(6666);
+            var e = 3;
+            console.log(e)//3
+        }
+        fn1();//6666
+        console.log(e);//1
+
+        var f = 1;
+        function fn2() {
+            console.log(2);
+            f = 3;
+        }
+        fn2();//2
+        console.log(f);//3
+
+        var g = 1;
+        function fn3(g) {
+            console.log(2);
+            g = 3;
+        }
+        fn3(g);//2
+        console.log(g);//1
+
+        var h =function () {
+            console.log(1);
+        };
+        function h() {
+          console.log(2);
+        }
+        h();//1
+    </script>
+</body>
+</html>

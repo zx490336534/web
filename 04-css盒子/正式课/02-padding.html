@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Padding</title>
+    <style>
+    *{
+            margin: 0;
+            padding: 0;
+     }
+    /*
+    padding 内边框 边框与内容之间的距离
+    一个值的时候：代表四个方向值一样 上右下左（顺时针）
+    两个值的时候：上下 右左
+    三个值的时候：上 右左 下
+    四个值的时候：上 右 左 下
+    */
+    div{
+        width: 200px;
+        height: 200px;
+        border: 10px solid red;
+        padding: 100px;
+        background: yellow;
+    }
+    span{
+        /*左右padding有效果*/
+        /*background: blue;*/
+        padding: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        你好
+    </div>
+    <span>hello python</span>123<br>
+    <em>111</em>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 500px;
+            border: 1px solid red;
+            margin: 50px auto;
+        }
+        #con{
+            text-indent: 2em;
+            line-height: 40px;
+            margin: 10px 10px;
+        }
+        #wrap{
+            margin: 10px auto;
+            padding-left: 30px;
+        }
+        span{
+            color: red;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="box">
+            <div id="wrap">
+                <input type="text" id="txt1">
+                <input type="text" id="txt2">
+                <input type="button" value="查找" id="btn1">
+                <input type="button" value="替换" id="btn2">
+            </div>
+            <div id="con">
+                [西塘]古代吴越文化发祥地之一，以桥多，弄多，廊棚多而闻名，众多的桥梁又把水乡连成一体。
+                古称“九龙捧珠”、“八面来风”。“春秋的水，唐宋的镇，明清的建筑，现代的人”，是对西塘最恰当不过的形容。
+                阿汤哥主演的《谍中谍3》更是将西塘特有的水乡风情带给了全世界。
+                古镇区内有保存完好的明清建筑群多处，具有较高的艺术性和研究价值，为国内外研究古建筑的专家学者所瞩目。
+                西塘也是美食的天堂，小到街头小吃，大到饭店佳肴，林林总总，令人垂涎。
+                夜色来临坐着游船游西塘，整座古镇似诗如画，人处其间，恍然桃花琼瑶，
+                不知是人在画中游，还是画在心中游。
+            </div>
+        </div>
+    </div>
+    <script>
+    var txt1 = document.getElementById('txt1');
+    var txt2 = document.getElementById('txt2');
+    var btn1 = document.getElementById('btn1');
+    var btn2 = document.getElementById('btn2');
+    var con = document.getElementById('con');
+    str = con.innerHTML;
+    btn1.onclick = function () {
+        var v = txt1.value;
+        console.log(v);
+        var arr = str.split(v);
+        if (str.indexOf(v) !== -1){
+            con.innerHTML = arr.join('<span>'+v+'</span>')
+        }else {
+            alert('没有找到')
+        }
+
+    };
+    btn2.onclick = function () {
+        var v1 = txt1.value;
+        var v2 = txt2.value;
+        var arr = str.split(v1);
+        con.innerHTML = arr.join('<span>'+v2+'</span>')
+    }
+    </script>
+</body>
+</html>

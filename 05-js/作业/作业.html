@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 300px;
+            height: 100px;
+            margin: 20px auto;
+            text-align: center;
+            line-height: 100px;
+            cursor: pointer;
+        }
+        #box1{
+            background: aqua;
+        }
+        #box2{
+            background: red;
+        }
+        #box3{
+            background: yellow;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <script>
+        var oBox1 = document.getElementById('box1')
+        var oBox2 = document.getElementById('box2')
+        var oBox3 = document.getElementById('box3')
+        
+        oBox1.onmousemove = function () {
+            oBox1.innerHTML = '你压到我的头了';
+            oBox2.innerHTML = '还好我在下面';
+            oBox3.innerHTML = '我在最下面咯';
+            oBox1.style.background = 'blue';
+        };
+        oBox1.onmouseleave = function () {
+            oBox1.innerHTML = '溜了';
+            oBox2.innerHTML = '溜了溜了';
+            oBox3.innerHTML = '我也溜了';
+            oBox1.style.background = 'aqua';
+        };
+
+        oBox2.onmousemove = function () {
+            oBox1.innerHTML = '我在最上面';
+            oBox2.innerHTML = '怎么是我了';
+            oBox3.innerHTML = '我还是在下面';
+            oBox2.style.background = 'white';
+        };
+        oBox2.onmouseleave = function () {
+            oBox1.innerHTML = '溜了';
+            oBox2.innerHTML = '溜了溜了';
+            oBox3.innerHTML = '我也溜了';
+            oBox2.style.background = 'red';
+        };
+
+        oBox3.onmousemove = function () {
+            oBox1.innerHTML = '还好我在最上面';
+            oBox2.innerHTML = '还好我在中间';
+            oBox3.innerHTML = '干嘛打我';
+            oBox3.style.background = 'green';
+        };
+        oBox3.onmouseleave = function () {
+            oBox1.innerHTML = '溜了';
+            oBox2.innerHTML = '溜了溜了';
+            oBox3.innerHTML = '我也溜了';
+            oBox3.style.background = 'yellow';
+        };
+    </script>
+</body>
+</html>

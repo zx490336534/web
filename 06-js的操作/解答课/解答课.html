@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box span{
+            display: inline-block;
+            width: 80px;
+            height: 30px;
+            border: 1px solid blue;
+            line-height: 30px;
+            text-align: center;
+            color: purple;
+            margin: 5px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <!--<span></span>-->
+    </div>
+    <script>
+        var oBox = document.getElementById('box')
+        for (var i=1;i<10;i++){
+            for (var j=1;j<=i;j++){
+                oBox.innerHTML+="<span>"+i+' * '+j+' = '+i*j+"</span>"
+            }
+            oBox.innerHTML += '<br/>'
+        }
+    </script>
+</body>
+</html>

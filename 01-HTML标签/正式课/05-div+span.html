@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>div+span</title>
+    <style>
+        .box1{
+        width:200px;
+        height:200px;
+        background:seagreen;
+        <!--display:inline;-->
+        }
+        .box2{
+        width:200px;
+        height:200px;
+        background:red;
+        }
+        .box3{
+        width:200px;
+        height:200px;
+        background:seagreen;
+        display:inline-block;
+        }
+        .box4{
+        width:200px;
+        height:200px;
+        background:red;
+        display:inline-block;
+        }
+        span{
+        width:100px;
+        height:100px;
+        background:red;
+        <!--display:block;-->
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+    <div class="box4">4</div>
+    <span>3</span>
+    <span>4</span>
+    <!--
+    块级元素div display:block;
+        独占一行支持设置宽高
+        如果没有设置宽高 高度有内容撑开，宽度默认为浏览器的宽度
+     行内（内联）元素span display:inline;
+        可以和其他行内元素位于同一行
+        不支持设置宽高，内容撑开宽高
+
+       行内块元素 display:inline-black;
+       块级元素可以横排展示
+
+       display:none;
+        隐藏元素，包括其子标签，在页面中不占位置，等同于消失
+    -->
+</body>
+</html>

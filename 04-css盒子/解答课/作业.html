@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作业</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div.box{
+            position: relative;
+            margin: 50px auto;
+            width: 520px;
+            height: 280px;
+            background: url("z.webp");
+        }
+        li{
+            list-style: none;
+            width: 10px;
+            height: 10px;
+            background: white;
+            float: left;
+            margin: 5px 5px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        ul{
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            margin-left: -50px;
+            height: 20px;
+            width: 100px;
+            /*border: 1px solid ;*/
+            background-color: rgba(255,255,255,.3);
+            overflow: hidden;
+            border-radius: 10px;
+
+        }
+        .btn{
+            background: rgba(0,0,0,.3);
+        }
+        .btn div{
+            position: absolute;
+            top:50%;
+            margin-top: -15px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            background: rgba(255,255,255,0.5);
+            font-size: 5px;
+            display: none;
+        }
+        .btn div:hover{
+            background: rgba(255,255,255,0.7);
+            cursor: pointer;
+        }
+        div.box:hover .btn div{
+            display: block;
+        }
+        .btn div.left{
+            left: 0;
+            border-radius: 0 50% 50% 0;
+            margin-left: -10px;
+        }
+        .btn div.right{
+            right: 0;
+            border-radius: 50% 0 0 50%;
+            margin-right: -10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="btn">
+            <div class="left">&lt;</div>
+            <div class="right">&gt;</div>
+        </div>
+    </div>
+
+</body>
+</html>

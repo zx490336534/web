@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景</title>
+    <style>
+        /*
+        background-color 背景色
+        background-image 背景图片
+        background-repeat 背景平铺
+            repeat 平铺 默认
+            repeat-x 平铺x
+            repeat-y 平铺y
+            np-repeat 不平铺
+            只要背景图片的宽高小于被设置的元素的宽高 才会有平铺效果
+        background-size背景大小
+        - 值：%    px
+        - 给一个值的时候，默认X轴，Y轴默认auto;
+        - auto 会等比例缩放
+        - 特殊值
+          - cover
+          - contain
+        */
+        div{
+            border: 1px solid #dddddd;
+            width: 1500px;
+            height: 800px;
+            /*background: greenyellow;*/
+            background-image: url("image/2.jpg");
+            background-repeat: no-repeat; /*不平铺*/
+            /*background-repeat: repeat-x;*/ /*水平平铺*/
+            /*background-repeat: repeat-y;*/ /*竖直平铺*/
+            background-position: 50px 40px; /* left\right bottom\top */
+            /*background-size: 500px;*/
+            background-size: cover; /*铺满但是图片展示不全*/
+            background-size: contain; /*铺一边但是不铺满全部*/
+            /*background:  color image repeat position/size;*/
+            background: url("image/1.jpg") no-repeat top left/cover;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>

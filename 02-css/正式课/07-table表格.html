@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格</title>
+    <style>
+        table{
+            width: 200px;
+            height: 250px;
+            border-collapse: collapse;
+            /*
+            collapse 边框合并，如果相邻的话共用一个
+            separate默认值，边框分开，不合并
+            */
+        }
+        tr td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <caption><b>同学信息表</b></caption>
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>钟鑫</td>
+                <td>男</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>钟鑫1</td>
+                <!--合并行-->
+                <td rowspan="2">男</td>
+                <td>24</td>
+            </tr>
+                    <tr>
+                <td>3</td>
+                <td>钟鑫2</td>
+                <!--<td>男</td>-->
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>钟鑫3</td>
+                <!--<td>男</td>-->
+                <!--合并列-->
+                <td colspan="2"> 男 24</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>钟鑫4</td>
+                <td>男</td>
+                <td>24</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 300px;
+            height: 100px;
+            margin: 20px auto;
+            text-align: center;
+            line-height: 100px;
+            cursor: pointer;
+            border-radius: 10px;
+            background: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <script>
+        var oBox1 = document.getElementById('box1')
+        var oBox2 = document.getElementById('box2')
+        var oBox3 = document.getElementById('box3')
+
+        oBox1.onmousemove = function () {
+            oBox1.innerHTML = '我被移入了';
+            oBox2.innerHTML = '老大被移入了';
+            oBox3.innerHTML = '老大被移入了+1';
+
+        };
+
+
+        oBox2.onmousemove = function () {
+            oBox1.innerHTML = '老二被移入了';
+            oBox2.innerHTML = '我被移入了';
+            oBox3.innerHTML = '老二被移入了+1';
+
+        };
+
+
+        oBox3.onmousemove = function () {
+            oBox1.innerHTML = '老三被移入了';
+            oBox2.innerHTML = '老三被移入了+1';
+            oBox3.innerHTML = '我被移入了';
+
+        };
+
+        oBox3.onclick = function () {
+            this.innerHTML = "<a href=https://www.baidu.com/ target=_blank>去百度<a/>"
+        }
+
+    </script>
+
+</body>
+</html>

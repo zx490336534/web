@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if条件</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        /*
+        * if ==>布尔值
+        * 判断符：
+        * >  <  >=  <=  == != !==  ===
+        * == 只判断值是否一样
+        * === 不仅判断值，还判断类型是否一样
+        * 当if的条件运算完之后不是布尔值的时候会被强制转换为布尔值
+        * 以下会被判断为false
+        * 0         number
+        * false     boolean
+        * ""        string
+        * null      object/null
+        * undefined undefined
+        * NAN       number
+        *
+        * NAN:Not a number
+        * alert(undefined+1);//NAN一般在非法运算中才出现
+        *
+        * isNaN(参数)非常讨厌数字
+        *   首先尽量把参数转换成数字
+        *   当参数是数字返回false
+        *   不是数字返回true
+        * */
+        if(3 === '3'){
+            alert('hello');
+        }else {
+            alert('hi');
+        }
+        //当真语句只有一行的时候，可以去掉大括号，还可以直接写在条件的后面
+        if(3<5) alert('真');
+
+        5<4?x=10:x=20; //条件?真语句:假语句;
+        alert(x);
+
+        y=5<6?10:20;
+        alert(y);
+
+        var x = 20;
+        if (x>60){
+            alert('x大于60');
+        }else if(x>40){
+            alert('x大于40');
+        }else if(x>20){
+            alert('x大于20');
+        }else{
+            alert('x大于0');
+        }
+
+        if(""){
+            alert(1);
+        }else{
+            alert(2);
+        }
+        alert(undefined+1);
+
+        if(isNaN('5')){
+            alert('真')
+        }else{
+            alert('假')
+        }
+    </script>
+</body>
+</html>

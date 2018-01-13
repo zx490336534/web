@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box1{
+            width: 200px;
+            height: 200px;
+            background: red;
+            padding: 100px;
+            margin: 50px;
+            border: 10px solid yellow;
+            position: absolute;
+            top: 50px;
+        }
+        #box{
+            width: 800px;
+            height: 800px;
+            border: 1px solid blue;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="box1">
+
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+    /*
+    *
+    .css()
+    .width()
+    .height()
+
+    innerWidth / innerHeight 算了padding
+    outerWidth / outerHeight 算了 padding+border
+
+    position()
+        该对象有top /left 属性
+        代表到定位父级的 top/left的值
+        不算 margin 和padding
+    offset()
+       该对象有top /left 属性
+       代表到浏览器窗口的 top/left的值
+    * */
+
+//    $('#box').css({
+//        "width":"200px",
+//        "height":"200px",
+//        "background":"red"
+//    });
+    console.log($('#box').width());//200
+    console.log($('#box').height());//200
+
+    console.log($('#box').innerWidth());//400
+    console.log($('#box').innerHeight());//400
+
+    console.log($('#box').outerWidth());//420
+    console.log($('#box').outerHeight());//420
+
+    var $box = $('#box');
+    console.log($box.offset().top);//50
+
+
+    var $box1 = $('#box1');
+    console.log($box1.position().top);//50到定位父级的位置
+
+
+
+    </script>
+</body>
+</html>

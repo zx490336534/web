@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        #box1{
+            width: 200px;
+            height: 200px;
+            background: purple;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+    <button id="btn">变化</button>
+    <script>
+        /*行内样式标签属性：大部分情况下，js都是通过行内样式来达到修改样式的目的*/
+        var oBox = document.getElementById('box');
+        var oBtn = document.getElementById('btn');
+        //当我们需要修改单个属性的时候，我们一般直接操作修改元素的行内样式
+//        oBox.style.width = '200px';
+//        oBox.style.height = '200px';
+//        oBox.style.background = 'yellow';
+//        oBox.style.cssText = "width: 300px; height: 300px; background:blue;";
+//        oBox.style.marginTop = '200px';
+//        oBox.style['margin-left'] = '100px';
+        oBtn.onclick = function () {
+//            oBox.id = 'box1';
+            if (oBox.id === 'box'){
+                oBox.id = 'box1';//条件为真的时候执行
+            }
+            else {
+                oBox.id = 'box';
+            }
+        };
+
+
+
+    </script>
+</body>
+</html>

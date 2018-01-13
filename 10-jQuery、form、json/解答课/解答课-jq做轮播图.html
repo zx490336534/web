@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #wrap{
+            width: 520px;
+            height: 280px;
+            border: 1px solid red;
+            margin: 50px auto;
+            position: relative;
+        }
+        #wrap .pic ul li{
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        /*#wrap .pic ul li.active{*/
+            /*display: block;*/
+        /*}*/
+        #wrap .tab{
+            position: absolute;
+            width: 80px;
+            height: 16px;
+            left: 50%;
+            margin-left: -40px;
+            bottom: 15px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        #wrap .tab li{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            float: left;
+            background: #ffffff;
+            margin: 3px 5px;
+            cursor: pointer;
+        }
+        #wrap .tab li.on{
+            background: red;
+        }
+        #wrap .btn div{
+            display: none;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top:50%;
+            margin-top: -15px;
+            background: rgba(0,0,0,0.2);
+            color: #ffffff;
+            font-weight: bold;
+            line-height: 30px;
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        #wrap .btn div.left{
+            left: 0;
+        }
+        #wrap .btn div.right{
+            right: 0;
+        }
+        #wrap:hover .btn div{
+            display: block;
+        }
+        #wrap .btn div:hover{
+            background: rgba(0,0,0,0.7);
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="pic">
+            <ul>
+                <li><img src="img/1.jpg" alt=""></li>
+                <li><img src="img/2.webp" alt=""></li>
+                <li><img src="img/3.webp" alt=""></li>
+                <li><img src="img/4.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="tab">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="btn">
+            <div class="left">&lt;</div>
+            <div class="right">&gt;</div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+        (function () {
+            var $wrap = $('#wrap'),
+                $picLi = $('.pic ul li'),
+                $tabLi = $('.tab ul li'),
+                $btn = $('.btn div'),
+                length = $picLi.length,
+                index = 0,
+                timer = null;
+
+            //初始化显示   eq->jq转换为特定的jq
+            $picLi.hide().eq(0).show();
+            $tabLi.eq(0).addClass('on');
+
+            //tab区域
+            $tabLi.click(function () {
+                var x = $(this).index();
+                if(x !== index){
+                    change(x);
+                }
+
+            });
+
+            //btn点击 0 1
+            $btn.click(function () {
+                var x = index;
+                if ($(this).index()){
+                    x ++;
+                    x %= length;
+                }else {
+                    x --;
+                    if(x<0)x = length-1;
+                }
+                change(x);
+            });
+            //变化函数
+            function change(i) {
+                $picLi.eq(index).fadeOut();//淡出
+                $tabLi.eq(index).removeClass('on');
+                index = i;
+                $picLi.eq(index).fadeIn();
+                $tabLi.eq(index).addClass('on');
+            }
+
+            //定时器
+//            auto();
+            $wrap.hover(function () {
+               clearInterval(timer);
+            },auto());
+            function auto() {
+                timer = setInterval(function () {
+                    var x = index;
+                    x ++;
+                    x %= length;
+                    change(x);
+                },2000);
+                return auto;
+            }
+
+        })();
+    </script>
+</body>
+</html>

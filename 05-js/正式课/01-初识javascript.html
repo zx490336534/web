@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script>
+        //如果script里面涉及到操作后面的元素，而又非要把script放在前面的话，需要加上
+        window.onload = function () {
+            alert('3');//这里在写代码：当整个页面加载完成之后，再执行这里的代码
+        }
+    </script>
+</head>
+<body>
+<!--2:<div class="box" onclick="alert(1);"></div>-->
+    <!--3:<script src="first.js"></script>-->
+    <script>
+        /*
+        1.JavaScript 是一种脚本语言，是一种动态类型、弱类型
+        2.JavaScript通常用来操作HTML页面的
+            html骨架，css是样式，js是行为
+
+        JS代码写在哪里：
+            script标签里面
+            写在外部.js后缀文件里面，通过scrip标签引入
+            写在标签里面（不建议）<div class="box" onclick="alert(1);"></div>
+        */
+         //单行注释
+         /*多行注释*/
+
+//1:        alert(1);
+//        console.log(2);
+        alert('hello');
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        function fn() {
+            var oBox = document.getElementById('box');
+            oBox.innerHTML = 'hello';//过程
+//            return 'zhongxin';//结果
+            return oBox
+        }
+        var x = fn();
+        console.log(x)
+        x.title = 'aaa'
+    </script>
+</body>
+</html>

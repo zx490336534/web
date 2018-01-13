@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="box">
+        <p class="on">1</p>
+        <p class="box1">2</p>
+        <p>3</p>
+        <p>4</p>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+        /*
+        * attr 设置/获取 标签属性
+        removeAttr()
+
+        addClass
+        removeClass
+            传class 移除你传的那个
+            没有  移除全部
+        toggleClass 有就删没有则加
+        操作class类名
+
+         jq      js
+        html()  innerHTML
+        text()  innerText
+        val()   value
+
+        在jq里面，设置某个值的时候，一般自带遍历
+                  获取某个值的时候，一般获取第一个
+        * */
+        var $box = $('#box').attr('id');//读操作
+        console.log($box);
+
+        $('#box').attr('class','zhongxin');//设置
+        $('#box').attr('zx','zhongxin');//设置 <div id="box" class="zhongxin" zx="zhongxin">
+
+        $('#box').removeAttr('zx');//移除<div id="box" class="zhongxin">
+
+        var $p = $('#box p');
+        $p.addClass('wrap');//新增
+//        <div id="box" class="zhongxin">
+//            <p class="on wrap">1</p>
+//            <p class="box1 wrap">2</p>
+//            <p class="wrap">3</p>
+//            <p class="wrap">4</p>
+//        </div>
+        $p.removeClass('wrap');//移除
+//        $p.removeClass();//移除全部class
+        $p.toggleClass('on');//有on删除，无on添加
+//        <div id="box" class="zhongxin">
+//            <p class="">1</p>
+//            <p class="box1 on">2</p>
+//            <p class="on">3</p>
+//            <p class="on">4</p>
+//        </div>
+
+        $p.html('888');
+        console.log($p.html());
+
+
+    </script>
+</body>
+</html>

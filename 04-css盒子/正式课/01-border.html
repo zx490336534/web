@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒子模型</title>
+    <style>
+        /*
+        盒子模型
+            他是由内容（content）、内边框(padding)、外边距(margin)、边框(border)
+        */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /*
+        border:边框 类型 颜色
+        border-width solid-实线 dashed-虚线 dotted-点线 double-双线
+        border-color颜色
+        一个值的时候：四个方向一样 上右下左（顺时针）
+        两个值的时候：上下 左右
+        三个值的时候：上 右左 下
+        四个值的时候：上 右 下 左
+
+        border-width 边框大小
+        border-top-width 上边框大小
+        border-right-width 右边框大小
+        border-bottom-width 下边框大小
+        border-left-width 左边框大小
+        0 or none代表没有
+
+        border-style/border-color同上
+
+        */
+        div{
+            width: 100px;
+            height: 100px;
+            border: 10px dashed red;/*复合样式*!*/
+            /*border-width: 0px 20px 30px 40px;*/
+            /*border-style: solid dashed dotted double;*/
+            /*border-color: red greenyellow black aqua;*/
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>

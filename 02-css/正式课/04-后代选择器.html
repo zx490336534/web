@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后代选择器</title>
+    <style>
+        div li{
+            background: red;
+            width: 100px;
+            height: 100px;
+        }
+        div  ul li{
+            background: blue;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <!--ul>li*3-->
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+        <!--ul>li{$}*3-->
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+
+        <!--ol>li{$$}*3-->
+        <ol>
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+        </ol>
+    </div>
+</body>
+</html>

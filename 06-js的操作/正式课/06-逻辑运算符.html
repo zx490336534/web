@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        /*
+        * 针对布尔值
+        * && 与  两边都为真结果为真
+        * || 或  两边都为假结果才是假，其他都是真
+        * ！ 非  取反，真变假，假变真
+        *
+        * 当逻辑运算符，两边不一定是布尔值的时候
+        * &&  遇到假就停，但是不会进行类型转换
+        * || 遇到真就停
+        * ！ 隐式类型转换，将后面的数据先转换成布尔值再取反
+        * */
+        var a = true && false;
+        var b = true || false;
+        var c = !true
+        alert(a);
+        alert(b);
+        alert(c);
+        var d = 4 && true && 8;
+        alert(d);//8
+        var e = 0 && true && 8;
+        alert(e);//0
+        var f = 0 || false || 1 || 9;
+        alert(f)//1
+        var g = !8;
+        alert(g);//false
+        alert(typeof g);//boolean
+    </script>
+</body>
+</html>

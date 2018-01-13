@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        sum(1,2,3);
+        function sum() {
+            //不定参 arguments存储着所有实参的集合
+            console.log(arguments.length);
+            var all = 0;
+            for (var i=0;i<arguments.length;i++){
+                all += arguments[i];
+            }
+            console.log(all)
+        }
+    </script>
+</body>
+</html>

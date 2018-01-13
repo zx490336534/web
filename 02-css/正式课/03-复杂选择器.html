@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复杂选择器</title>
+    <style>
+        /*群组选择器 对几个有相同属性的选择器进行样式设置 两个选择器之间必须用逗号隔开*/
+        /*div,p{*/
+            /*width: 100px;*/
+            /*height: 100px;*/
+            /*background: red;*/
+        /*}*/
+        /*p{*/
+            /*width: 100px;*/
+            /*height: 100px;*/
+            /*background: red;*/
+        /*}*/
+
+        /*~ 兄弟选择器 div ~ p：和div同级且是p元素 操作的对象是该元素下的所有兄弟元素*/
+        /*div ~ p{*/
+            /*width: 100px;*/
+            /*height: 100px;*/
+            /*background: red;*/
+
+        /*}*/
+
+        /*> 子代选择器 选择某元素下面的子元素*/
+        /*div > p{*/
+            /*width: 100px;*/
+            /*height: 100px;*/
+            /*background: red;*/
+        /*}*/
+
+        /*相邻选择器 div + p：div下面的p  相邻选择器操作的对象是该元素的同级元素 选择div相邻的下一个兄弟元素*/
+        div + p{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <div>div1</div>
+    <p>p1</p>
+    <p>2</p>
+    <div>
+        div2
+        <p>p2</p>
+    </div>
+    <p>p3</p>
+</body>
+</html>

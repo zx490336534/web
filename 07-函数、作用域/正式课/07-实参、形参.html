@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        /*
+        * 我们在使用函数时，加括号的函数执行的时候可以传递参数
+        *   实参
+        *   形参
+        *   不定参
+        * */
+        fn(10);//实参 用已知的变量/具体的数值
+        function fn(x) {//形参：相当于局部变量，命名规则和var相同
+            console.log(x)
+        }
+        sum(50,40);//90
+        function sum(x,y) {
+            console.log(x+y);
+        }
+        sum1(1,2,3,4);//6
+        function sum1(x,y,z) {
+            console.log(x+y+z);
+        }
+        sum1(1,2)//NaN
+
+        function sum2(x,y,z) {
+            x = x || 0;
+            y = y || 0;
+            z = z || 0;
+            console.log(z);
+            console.log(x+y+z);
+        }
+        sum2(1,2);//3
+    </script>
+</body>
+</html>

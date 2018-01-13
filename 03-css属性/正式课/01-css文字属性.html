@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css文字属性</title>
+    <style>
+        /*
+       font-family 字体类型
+       默认情况下，浏览器的字体是微软雅黑Microsoft Yahei。
+       字体中有多个字体的时候，如果前面的字体没有就使用后面的字体
+        */
+        /*
+        font-size字体大小
+        单位：px|%|em|rem
+        px 谷歌浏览器默认字体大小16px，最小12px
+        % 相对于父容器中字体的%调整
+        em 相对于父容器
+        rem 相对于html（根标签）的字体大小
+        */
+
+        /*font-weight字体粗细
+        - 关键字
+          - normal 默认字体
+          - lighter 较细
+          - blod 加粗
+          - bolder 很粗
+        - 给值
+          - 100-900只能给整百数
+          - 400 相对于正常
+          - 700 相对于bold
+        */
+
+        /*
+        font-style字体类型（规定是否倾斜）
+        - normal 默认 文字正常
+        - italic 文字斜体（属性）
+        - oblique  文字斜体
+        */
+
+        /*
+        color文字颜色
+        - 关键词(英文单词) red
+        - #16进制值(0-9 a-f)
+        #5544aa = #54a
+        #dddddd = #ddd
+        - rgb(0-255,0-255,0-255)
+        r red
+        g green
+        b blue
+        - rgba(0-255,0-255,0-255,0-1)
+        r red
+        g green
+        b blue
+        a alpha
+            0 完全透明
+            1 完全不透明
+        */
+        .box1{
+            font-family: "Times New Roman",微软雅黑;
+            font-size: 24px;
+
+        }
+        .box2{
+            font-family: 微软雅黑;
+            /*font-size: 20px;*/
+            /*font-size: 2rem;*/ /* 2 * 默认字体大小16px = 32px */
+            /*font-size: 2em;*/ /* 2 * 父容器字体大小24px = 48px */
+            /*font-size: 50%;*/ /*父容器50%*/
+            font-size: 48px;
+            /*font-weight: bold;*/
+            font-weight: 700;
+            font-style: italic;
+            color: #666;
+            color: rgb(125,220,12)
+        }
+        .box3{
+            font-size: 48px;
+            font-weight: lighter;
+            color: rgba(125,220,12,0);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        Hello World 你好 123
+        <div class="box2">
+            Hello World 你好 123
+        </div>
+        <div class="box3">
+            Hello World 你好 123
+        </div>
+    </div>
+</body>
+</html>

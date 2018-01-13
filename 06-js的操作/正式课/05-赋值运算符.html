@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        /*
+        * 赋值运算符
+        * += -+ *= /= %=
+        * ++ -- 两个都存在隐式类型转换，会全部转换为数字
+        * ++x x++
+        * */
+//        var x = 5;
+//        alert(x+=10);//15
+//        alert(x-=2);//15-2=13
+//        alert(x*=2);//13*2=23
+//        alert(x/=2);//26/2=13
+//        alert(x%=2);//13%2=1
+//
+//        var y = 5;
+//        alert(y-='2');//3
+//        alert(typeof y)//number
+
+        var z = 5;
+        alert(z++);//5
+        alert(++z);//7
+        var h = 5;
+        var i = h++;//(i=h)++
+        alert(h);//6
+    </script>
+</body>
+</html>

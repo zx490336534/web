@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+    /*
+    * 函数表达式
+    *   特点：可以在后面加括号立即执行
+    *   () + - ! ~ 可以将匿名函数变为函数表达式
+    * */
+    fn();
+    function fn(){
+        alert('hello');
+    }//函数定义，可以在定义前执行函数，也可以在定义后执行
+    fn();
+
+    //函数表达式
+    //不能在前面调用fn1();
+    var fn1 = function () {
+        alert(3)
+    };
+    fn1();
+
+    var fn2 = function () {
+        alert(4)
+    }();
+
+    (function () {
+        alert(5)
+    })();
+
+    (function () {
+        alert(6)
+    }());
+
+    +function () {
+            alert(7)
+    }();
+
+    -function () {
+            alert(8)
+    }();
+
+    !function () {
+            alert(9)
+    }();
+
+    ~function () {
+            alert(10)
+    }();
+    </script>
+</body>
+</html>

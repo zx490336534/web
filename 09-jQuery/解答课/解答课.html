@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #wrap{
+            width: 520px;
+            height: 280px;
+            border: 1px solid red;
+            margin: 50px auto;
+            position: relative;
+        }
+        #wrap .pic ul li{
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #wrap .pic ul li.active{
+            display: block;
+        }
+        #wrap .tab{
+            position: absolute;
+            width: 80px;
+            height: 16px;
+            left: 50%;
+            margin-left: -40px;
+            bottom: 15px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        #wrap .tab li{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            float: left;
+            background: #ffffff;
+            margin: 3px 5px;
+            cursor: pointer;
+        }
+        #wrap .tab li.on{
+            background: red;
+        }
+        #wrap .btn div{
+            display: none;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top:50%;
+            margin-top: -15px;
+            background: rgba(0,0,0,0.2);
+            color: #ffffff;
+            font-weight: bold;
+            line-height: 30px;
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        #wrap .btn div.left{
+            left: 0;
+        }
+        #wrap .btn div.right{
+            right: 0;
+        }
+        #wrap:hover .btn div{
+            display: block;
+        }
+        #wrap .btn div:hover{
+            background: rgba(0,0,0,0.7);
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="pic">
+            <ul>
+                <li><img src="img/1.jpg" alt=""></li>
+                <li><img src="img/2.webp" alt=""></li>
+                <li><img src="img/3.webp" alt=""></li>
+                <li><img src="img/4.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="tab">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="btn">
+            <div class="left">&lt;</div>
+            <div class="right">&gt;</div>
+        </div>
+    </div>
+    <script>
+        (function () {
+            var warp = document.getElementById('wrap');
+            var picLi = warp.querySelectorAll('.pic ul li');
+            var tabLi = warp.querySelectorAll('.tab ul li');
+            var btn = warp.querySelectorAll('.btn div');
+            var length = picLi.length;
+            var lastIndex = 0;
+            console.log(length);
+
+            //初始化样式
+            picLi[0].className = 'active';
+            tabLi[0].className = 'on';
+
+            //tab的切换
+            for(var i=0; i< length;i ++){
+                tabLi[i].index = i;
+                tabLi[i].onclick = function () {
+                    tabLi[lastIndex].className='';
+                    picLi[lastIndex].className='';
+                    lastIndex=this.index;
+                    tabLi[lastIndex].className='on';
+                    picLi[lastIndex].className='active';
+                }
+            }
+
+            //btn的切换
+            for(var j = 0;j < 2;j++){
+                if(j){
+                    btn[j].onclick = function () {
+                        tabLi[lastIndex].className='';
+                        picLi[lastIndex].className='';
+                        lastIndex ++;
+                        lastIndex %= length;
+                        tabLi[lastIndex].className='on';
+                        picLi[lastIndex].className='active';
+                    }
+
+                }else{
+                    btn[j].onclick = function () {
+                        tabLi[lastIndex].className='';
+                        picLi[lastIndex].className='';
+                        lastIndex --;
+                        if(lastIndex < 0){
+                            lastIndex = length-1;
+                        }
+                        tabLi[lastIndex].className='on';
+                        picLi[lastIndex].className='active';
+                    }
+                }
+            }
+        })();
+    </script>
+</body>
+</html>

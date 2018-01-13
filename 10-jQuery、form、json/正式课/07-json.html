@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+    /*
+    * JSON:轻量级的数据交互格式，它实际在传输的时候都是字符串
+    JSON:一种交互的格式，所有的语言基本上都有字符串，可以传递
+    js对象:是一种js数据类型，是js特有的，无法传递交互数据
+
+     JSON语法规则：
+         1.json数据格式的属性（键和字符串）的值都为双引号
+         2.值:整数、浮点数（小数）、字符串、布尔、数组、对象（除了undefined/NaN）
+
+    JSON用js定义：
+         通过字符串来定义
+         通过js对象来定义，最后传输的时候将对象转换为字符串
+    *
+    * */
+
+    //定义object
+    var obj={
+        "name":'zhongxin',
+        'age':23,
+        'gender':'man'
+    };
+    console.log(typeof obj);
+    console.log(obj);
+
+    //定义json
+    var obj1 ='{"name":"zhongxin","age":23}';
+    console.log(typeof obj1);
+    console.log(obj1);
+
+    //把object转换成json
+    var obj2={
+        "name":'zhongxin',
+        'age':23,
+        'gender':'man'
+    };
+    var obj3 = JSON.stringify(obj2);
+    console.log(typeof obj3);
+    console.log(obj3);
+
+    //把json转换成object
+    var obj4 ='{"name":"zhongxin","age":23}';
+    var obj5 = JSON.parse(obj4);
+    console.log(typeof obj5);
+    console.log(obj5);
+
+
+    var obj6 = {"name":'qq',"age":18,"marry":false};
+    console.log(obj6);
+    console.log(obj6.length);//undefined
+    console.log(obj6.name);
+    for(var key in obj6){
+        console.log(key,obj6[key]);
+    }//key是{}里面的属性名称，json[key]{}里面属性的值
+
+    </script>
+</body>
+</html>

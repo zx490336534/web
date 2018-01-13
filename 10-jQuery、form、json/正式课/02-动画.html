@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+    /*
+    * 动画
+         show  不传参 瞬间显示隐藏
+         hide  传一个数字参数，代表毫秒，改变宽、高、透明度
+         toggle
+
+        fadeIn
+        fadeOut 默认300 改变透明度
+        fadeTo  可以把透明度设置一个值，时间参数不能省略
+
+        slideDown 默认300 改变高度
+        slideUp
+        slideToggle 改变高度
+
+        这三组，不仅仅可以接受一个数字参数，能接受的参数有：
+         * number / string  代表动画时间（可缺省）   毫秒数 / （"fast" "normal" "slow"）
+         * string   代表运动曲线（可缺省）
+         * function   代表回调函数
+    * */
+    var $box = $('#box');
+    var off = false;
+    $(document).click(function () {
+//        $box.hide(2000);//2s消失
+//        $box.show(2000);//2s出现
+//        $box.toggle(2000);//存在则消失，不存在则出现
+    });
+    $(document).click(function () {
+        if (off){
+            $box.show(2000);
+        }else{
+            $box.hide(2000);
+        }
+        off = !off;
+    })
+    </script>
+</body>
+</html>

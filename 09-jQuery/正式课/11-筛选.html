@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="show">
+        <p>1</p>
+        <p class="box">2</p>
+        <div>
+            <p>3</p>
+            <p>4</p>
+        </div>
+    </div>
+   <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+        /*
+        * eq
+        *   hasClass 检查当前的元素是否憨厚某个特定的类，如果有，则返回true
+        *   children 找儿子 可以不传参
+        *   find 不传参，默认不找
+        *   parent 不需要参数
+        *   parents(".show") 找到名字叫做show的祖先
+        *   siblings 不传参 所有兄弟 传参 所有兄弟按照筛选出合格的
+        *
+        * */
+        console.log($('p').hasClass('box'));//true
+        console.log($('p').hasClass('box1'));//false
+
+        console.log($('#box').children());//[p, p.box, div, prevObject: jQuery.fn.init(1)]
+        console.log($('#box').children('p'));//[p, p.box, prevObject: jQuery.fn.init(1)]
+
+        console.log($('#box').find());//[prevObject: jQuery.fn.init(1)]
+        console.log($('#box').find('p'));//[p, p.box, p, p, prevObject: jQuery.fn.init(1)]
+
+        console.log($('.box').parent());//[div#box.show, prevObject: jQuery.fn.init(1)]
+
+        console.log($('.box').parents());//(3) [div#box.show, body, html, prevObject: jQuery.fn.init(1)]
+
+        console.log($('.box').parents(".show"));//[div#box.show, prevObject: jQuery.fn.init(1)]
+
+        $('p').siblings().css('color','red');
+        $('p').siblings('.box').css('color','yellow');
+
+
+
+
+    </script>
+</body>
+</html>

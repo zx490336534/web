@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        span{
+            width: 100px;
+            height: 25px;
+            border: solid 1px red;
+            margin-left: 10px;
+            display: inline-block;
+            line-height: 25px;
+            text-align: center;
+        }
+        div{
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="0"><span></span></div>
+        <div id="1"><span></span><span></span></div>
+        <div id="2"><span></span><span></span><span></span></div>
+        <div id="3"><span></span><span></span><span></span><span></span></div>
+        <div id="4"><span></span><span></span><span></span><span></span><span></span></div>
+        <div id="5"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div id="6"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div id="7"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div id="8"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    </div>
+    <script>
+        for (var i=1;i<10;i++){
+            for (var j=1;j<=i;j++){
+                document.getElementById(i-1).getElementsByTagName('span')[j-1].innerHTML = i+' * '+j+' = '+i*j
+            }
+        }
+    </script>
+</body>
+</html>

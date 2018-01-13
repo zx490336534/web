@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复杂选择器优先级</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            background: red;
+        }
+        li{
+            list-style: none; /*去掉小黑圆点*/
+            width: 100px;
+            height: 100px;
+            background: yellow;
+        }
+        .box3{
+            background: blue;
+        }
+
+        /*ul .box3和li.box3优先级一样*/
+        ul .box3{/*注意有空格*/
+            background: aqua;
+        }
+        li.box3{/*注意没有空格*/
+            background: blue;
+        }
+
+        ul li.box3{
+            background: red;
+        }
+
+        #box1 #box5{
+            background: antiquewhite;
+        }
+        #box1 li#box5{
+            background: yellow;
+        }
+        #box1 .box1 .box2 .box6{
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    复杂后代选择器
+    1.先比id(最高位)  class（中间位） tagName（个数位）
+    2.id选择器个数不相等，id越多，优先级越高
+    3.id选择器个数相同,则看class,class多的优先级高
+    4.class个数相等，就看tagName个数
+    -->
+    <div id="box1">
+        <div class="box1">
+            <ul class="box2">
+                <li>1</li>
+                <li class="box3">2</li>
+                <li class="box3">3</li>
+                <li id="box5" class="box6">4</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

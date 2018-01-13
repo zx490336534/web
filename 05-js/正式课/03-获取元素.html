@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">111</div>
+    <p class="wrap">1</p>
+    <p class="wrap">2</p>
+    <p>3</p>
+
+    <div id="box1">
+        <p class="pp">
+            ppp
+            <i class="fly">
+                iii
+            </i>
+        </p>
+        <i class="fly">
+            222
+        </i>
+    </div>
+    <script>
+        /*
+        JS如何操作页面：
+            操作页面=操作标签 JS要操作标签就要先获取标签
+
+        js获取独有标签：
+            document.title
+            document.head
+            document.body
+
+
+        其他标签的获取，id前面必须是document，其他的前面可以是某元素，但不能是集合
+            通过id获取元素：
+                document.getElementById()
+            通过className获取：
+                document.getElementsByClassName()
+            通过标签名获取元素：
+                document.getElementsByTagName()
+            通过选择器的写法获取元素：
+                document.querySelector()
+                document.querySelectorAll()
+            通过name值获取：
+                document.getElementsByName()
+        */
+        document.title = '获取元素';
+//        document.body.innerHTML = '<em>我想给body新增点内容</em>'
+//        document.body.innerText = '<em>我想给body新增点内容+1</em>'
+
+//        获取的是确切的某个元素，可以直接操作这个元素
+//        document.getElementById('box').innerHTML = '我是id获取的元素';
+
+//        获取一堆元素的集合，设置操作的时候要通过下标（索引，序号）拿到对应的某一个
+//        document.getElementsByClassName('wrap')[0].innerHTML = document.getElementsByClassName('wrap')[0].innerHTML+'我是通过class获取的'
+        document.getElementsByClassName('wrap')[0].innerHTML += '我是通过class获取的';
+        document.getElementsByClassName('wrap')[1].innerHTML = '我是通过class获取的+1';
+//        alert(document.getElementsByClassName('wrap').length)
+
+//        alert(document.getElementsByTagName('p').length);
+        document.getElementsByTagName('p')[2].innerHTML = '我是通过标签名获取的元素';
+
+        document.querySelector('#box1 .pp .fly').innerHTML = 'box1 pp fly';
+        document.querySelectorAll('#box1 .fly')[1].innerHTML = 'box1 fly';
+
+        document.getElementById("box1").getElementsByTagName('p')[0].innerHTML = '我是通过id+标签获取的';
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+    </div>
+    <div>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+    </div>
+    <script src="jq.js"></script>
+    <script>
+        //js ---> jq
+        var oBox = document.getElementById('box');
+        oBox.innerHTML = 'hhh';
+        $(oBox).html('aaa');
+
+
+
+        //jq ---> js
+        $('p').html('000');
+        $('p')[0].innerHTML = '666';
+        $('p').get(1).innerHTML = '777';
+
+
+        //jq ---> 特定的jq
+        $('p').eq(2).html('888');
+
+    </script>
+</body>
+</html>

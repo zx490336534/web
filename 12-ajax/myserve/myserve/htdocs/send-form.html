@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>        
+    <title>测试表单</title>
+</head>
+<body>
+    <h1>测试表单</h1>
+    <p>这个页面用来测试 form表单 向后台发送数据</p>
+    <h3>GET表单</h3>
+    <form action="/htbin/accept-form.py" method="GET">
+        文本：<input type="text" name="get-text"><br>
+        <br>
+        单选框1：<input type="radio" name="get-radio" value="1"><br>
+        单选框2：<input type="radio" name="get-radio" value="2"><br>
+        <br>
+        复选框1：<input type="checkbox" name="get-checkbox" value="a"><br>
+        复选框2：<input type="checkbox" name="get-checkbox" value="b"><br>
+        <button type="submit">提交</button>
+    </form>
+    <h3>POST表单</h3>
+    <form action="/htbin/accept-form.py" method="POST">
+        文本：<input type="text" name="get-text"><br>
+        <br>
+        单选框1：<input type="radio" name="get-radio" value="1"><br>
+        单选框2：<input type="radio" name="get-radio" value="2"><br>
+        <br>
+        复选框1：<input type="checkbox" name="get-checkbox" value="a"><br>
+        复选框2：<input type="checkbox" name="get-checkbox" value="b"><br>
+        <button type="submit">提交</button>
+    </form>
+    <h3>导航链接</h3>
+    <ul>
+        <li><a href="/">首页</a></li>
+    </ul>
+</body>
+</html>
